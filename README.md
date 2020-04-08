@@ -17,7 +17,7 @@ This document thus is a high-level overview of payment states, actions and behav
 
 `refund:` refunds `committed` or `confirmed` transaction. This returns some amount of money from original payment that is being refunded back to the users account. Transaction state becomes `refunded`
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/538ea242-7d41-4b2f-9f9a-e81b8eb080be" id="53b9bqHM5zuH"></iframe></div>
+<div style="width: 600px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:600px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/538ea242-7d41-4b2f-9f9a-e81b8eb080be" id="53b9bqHM5zuH"></iframe></div>
 
 [Source](https://www.lucidchart.com/documents/edit/24a4c87c-c640-4c16-8de4-16fc00571ef8)
 
