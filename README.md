@@ -9,7 +9,7 @@ This document thus is a high-level overview of payment states, actions and behav
 
 `open/init/create:` initializes new payment transaction with *new* status
 
-`authorize:` authorizes new transaction which becomes `*authorized*`
+`authorize:` authorizes new transaction which becomes `authorized`
 
 `void/cancel:` voids or cancels `authorized` transaction and becomes `voided` or `cancelled`
 
