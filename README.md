@@ -1,5 +1,5 @@
 # Payment States
-This short article describes the basics of payment behaviour which is required in most of the payment and FinTech industies. 
+This short article describes the basics of payment behaviour which is required in most of the Payment and FinTech Processes. 
 
 >There are some instances where there are more `actions` or `states` of the payments, while other instances miss few of the below mentioned states or actions or have different nomenclature.
 
