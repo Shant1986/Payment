@@ -7,15 +7,15 @@ This document thus is a high-level overview of payment states, actions and behav
 
 ## 1: Basic Payment Actions
 
-`**open/init/create:**` initializes new payment transaction with *new* status
+`open/init/create:` initializes new payment transaction with *new* status
 
-`**authorize:**` authorizes new transaction which becomes `*authorized*`
+`authorize:` authorizes new transaction which becomes `*authorized*`
 
-`**void/cancel:**` voids or cancels `authorized` transaction and becomes `voided` or `cancelled`
+`void/cancel:` voids or cancels `authorized` transaction and becomes `voided` or `cancelled`
 
-`**commit/confirm:**` commits/confirms `authorized` transaction and becomes `committed` or `confirmed`
+`commit/confirm:` commits/confirms `authorized` transaction and becomes `committed` or `confirmed`
 
-`**refund:**` refunds `committed` or `confirmed` transaction. This returns some amount of money from original payment that is being refunded back to the users account. Transaction state becomes `refunded`
+`refund:` refunds `committed` or `confirmed` transaction. This returns some amount of money from original payment that is being refunded back to the users account. Transaction state becomes `refunded`
 
 <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/538ea242-7d41-4b2f-9f9a-e81b8eb080be" id="53b9bqHM5zuH"></iframe></div>
 
@@ -29,7 +29,7 @@ There are basically 4 core steps in the payment behaviour which revolves around 
 
 ### 1.2: authorize
 - `authorize` (or Authorization) is an important step in the whole payment cycle because this determines several things (for e.g. **liability shift** in case of **Refund**, **Chargebacks** etc.)
->Few things are made sure in this step like whether the customer has sufficient balance or not, so the Amount is `frozen` or `reserved` and  make sure it is approved by the Bank or Issuer
+  >Few things are made sure in this step like whether the customer has sufficient balance or not, so the Amount is `frozen` or `reserved` and  make sure it is approved by the Bank or Issuer
 - Authorization appears as a one-single step, which can be different in different in-payment flows and it can get complicated in the scenarios like [3DS2](https://prashantnagle.github.io/3DS2/)
 
 #### 1.2.1: Some background about authorization
@@ -48,14 +48,14 @@ There are basically 4 core steps in the payment behaviour which revolves around 
 
 ## 2: Basic payment states
 
-`**new:**` freshly initialized payment.
+`new:` freshly initialized payment.
 
-`**authorized:**` new payment was successfully authorized and money are blocked at users account. This money is automatically freed after some time if transaction is not `committed`/`confirmed`
+`authorized:` new payment was successfully authorized and money are blocked at users account. This money is automatically freed after some time if transaction is not `committed`/`confirmed`
 
-`**declined:**`  new payment failed to authorize.
+`declined:`  new payment failed to authorize.
 
-`**voided/cancelled:**` authorized payment was `voided`/`canceled` and money was freed back to users account again.
+`voided`/`cancelled:` authorized payment was `voided`/`canceled` and money was freed back to users account again.
 
-`**committed/confirmed:**` authorized payment was successfully `committed`/`confirmed`, money is subtracted from customer's account
+`committed`/`confirmed:` authorized payment was successfully `committed`/`confirmed`, money is subtracted from customer's account
 
-`**refunded:**` part or all amount of previous payment was returned back to users account. Only `committed`/`confirmed` transaction may be refunded
+`refunded:` part or all amount of previous payment was returned back to users account. Only `committed`/`confirmed` transaction may be refunded
